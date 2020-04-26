@@ -10,9 +10,11 @@ void printList(Node h) {
     std::cout << std::endl;
 }
 void insNodeAfterHead(Node &h, int toIns) {
-    Node newNode(toIns);
+    Node newNode;
+    newNode.key = toIns;
     newNode.next = h.next;
     h.next = &newNode;
+    printList(h);
 }
 void remNode(Node &h, Node* toRem) {
     Node* p = h.next;
@@ -32,13 +34,14 @@ void minSelSort(Node h) {
             min = p->key;
             remNode(h, p);
             insNodeAfterHead(h, min);
+            printList(h);
         }
         printList(h);
         p = p->next;
     }
 }
 int main() {
-    Node h;
+    Node h(42069);
     Node n1(74);
     Node n2(632);
     Node n3(6);
