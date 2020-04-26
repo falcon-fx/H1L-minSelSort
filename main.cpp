@@ -34,7 +34,6 @@ void minSelSort(Node h) {
             min = p->key;
             remNode(h, p);
             insNodeAfterHead(h, min);
-            printList(h);
         }
         printList(h);
         p = p->next;
